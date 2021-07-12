@@ -7,20 +7,22 @@ install.packages("viridis")
 install.packages("Hmisc")
 install.packages("berryFunctions")
 install.packages("plot3D")
-install_github('fawda123/ggord')
+installr::install.github('fawda123/ggord')
 install.packages("plotly")
 install.packages("factoextra")
 install.packages("remotes")
-remotes::install_github("AkselA/R-ymse")
+installr::install.github("AkselA/R-ymse")
 install.packages("ggalluvial")
 install.packages("LOST")
 install.packages("RVAideMemoire")
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("pcaMethods")
-install_github("vqv/ggbiplot")
-install_github("gavinsimpson/ggvegan")
+installr::install.github("vqv/ggbiplot") #Changed this function to specify the package since it was not recognized in mine
+installr::install.github("gavinsimpson/ggvegan") #Same here: installr::install.github
 install.packages("ggdendro")
+
+installr::git
 library(ggvegan)
 library(LOST)
 library(ymse)
@@ -154,7 +156,7 @@ data$adj.HL<-data$Head.Length *(mean(data$SL_mm)/data$SL_mm)^Coef["HeadLength",]
 
 
 
-### Interp() = function to estimate NAs
+# Interp() = function to estimate NAs ####
 # this function uses regression against most highly correlated variable (as long as r>0.1) to estimate missing
 # values. For cases in which a value for the most highly correlated variable is also missing, function defaults 
 # to next most correlated variable
